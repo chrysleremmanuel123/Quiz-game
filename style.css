@@ -1,0 +1,243 @@
+body {
+  font-size: 20px;
+  font-family: monospace;
+  background-image: url('img/bg2.gif');
+}
+form{
+  text-align: center;
+  padding-top: 30px;
+}
+#top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  padding: 1%;
+}
+#welcome{
+  text-align: end;
+  padding: 5px;
+}
+.btn{
+  border: 1px solid lightseagreen;
+  background: none;
+  padding: 5px 10px;
+  font-size: 20px;
+  font-family: monospace;
+  cursor: pointer;
+  margin: 10px;
+  color: lightseagreen;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn1:hover{
+  color:black;
+}
+
+.btn2{
+  color: white;
+}
+.btn2:hover{
+  color:  lightseagreen;
+}
+.btn::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: lightseagreen;
+  z-index: -1;
+  transition: 0.8s;
+}
+
+.btn2::before{
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+  height: 180%;
+}
+.btn2:hover::before{
+  height: 0%;
+}
+
+#container {
+  margin: 20px auto;
+  background-color: lightcyan;
+  height: 500px;
+  width: 800px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px 0px;
+  position: relative;
+}
+#start {
+  font-size: 1.5em;
+  font-weight: bolder;
+  width: 100px;
+  height: 150px;
+  border: 2px solid lightgrey;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  left: 300px;
+  top: 50px;
+  color: lightgrey;
+}
+#start:hover {
+  border: 3px solid lightseagreen;
+  color: lightseagreen;
+}
+
+#qImg {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#qImg img {
+  width: 250px;
+  height: 250px;
+  border-top-left-radius: 5px;
+}
+
+#question {
+  width: 500px;
+  height: 300px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#question p {
+  margin: 0;
+  padding-top: 25px;
+  font-size: 1.25em;
+}
+
+#choices {
+  width: 480px;
+  position: absolute;
+  right: 0;
+  top: 200px;
+  padding: 15px;
+}
+.choice {
+  display: inline-block;
+  width: 135px;
+  text-align: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+.choice:hover {
+  border: 2px solid lightseagreen;
+  font-weight: bold;
+}
+
+#timer {
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  bottom: 0px;
+  text-align: center;
+}
+#counter {
+  font-size: 3em;
+}
+#btimeGauge {
+  width: 150px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: lightgray;
+  margin-left: 25px;
+}
+#timeGauge {
+  height: 10px;
+  border-radius: 10px;
+  background-color: mediumseagreen;
+  margin-top: -10px;
+  margin-left: 25px;
+}
+#progress {
+  width: 500px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  padding: 5px;
+  text-align: right;
+}
+.prog {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #000;
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#scoreContainer img {
+  position: absolute;
+  top: 100px;
+  left: 325px;
+}
+#scoreContainer p {
+  position: absolute;
+  top: 130px;
+  left: 337px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.popup .overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
+
+.popup .content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  background: #fff;
+  width: 450px;
+  height: 260px;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.popup .close-btn{
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top:20px;
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  background-color: #000;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50px;
+
+}
+
+.popup.active .overlay{
+  display: block;
+}
+
+.popup.active .content{
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%,-50%) scale(1);
+
+}

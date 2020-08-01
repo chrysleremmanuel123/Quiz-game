@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="top-container">
+    <h1 id="text-bg">ARE</h1>
+  </div>
+  <div id="container">
+    <p id="welcome"></p>
+    <form id="form">
+
+      <input type="text" placeholder="Enter your name" id="name" class="btn">
+      <input type="button" value="Submit" class="btn btn1" onclick="writeName()">
+    </form>
+    <div id="start">Start Quiz!</div>
+    <div id="quiz" style="display: none;">
+      <div id="question"></div>
+      <div id="qImg"></div>
+      <div id="choices">
+        <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+        <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+        <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+      </div>
+      <div id="timer">
+        <div id="counter"></div>
+        <div id="btimeGauge"></div>
+        <div id="timeGauge"></div>
+      </div>
+      <div id="progress"></div>
+    </div>
+    <div class="popup" id="popup-1">
+      <div class="overlay"></div>
+      <div class="content">
+        <div class="close-btn" onclick="togglePopup()">&times;</div>
+        <h1>Result</h1>
+        <p id="nameContainer"></p>
+        <div id="scoreContainer" style="display: none;"></div>
+        <button type="button" onclick="history.go(0)" class="btn btn2">Try again</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="quiz.js"></script>
+</body>
+
+</html>
